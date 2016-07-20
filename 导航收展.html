@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,pre,em,img,strong,b,i,dl,dt,dd,ul,li,fieldset,form,label,legend,table,tbody,tfoot,thead,tr,th,td{ padding:0;margin: 0; border:0; -webkit-text-size-adjust:none;/* 使webkit内核不能缩放字体，用于兼容12px以下的字体 */}
+ul,dl,ol,li{list-style: none; outline: medium none;}
+.clearfix{*zoom:1;}
+.clearfix:after { clear: both; content: "\200B"; display: block; height: 0;}
+nav{ background-color: #2a2a2a; font-family: "微软雅黑"; position: fixed; width: 100%; top: 0;}
+nav li{ float: left;}
+nav li a{
+    display: block; 
+    line-height: 46px; 
+    text-decoration: none; 
+    color: #fff; 
+    padding: 0 10px;
+    transition:all 0.95s ease 0s;
+    text-align: center;
+    border-left: 1px solid #353535;
+    border-right: 1px solid #0d0c08;
+}
+nav li .aa1:hover{background-color: #D2569F;}
+nav li .aa2:hover{background-color: #217AC6;}
+nav li .aa3:hover{background-color: #D83035;}
+nav li .aa4:hover{background-color: #AABB27;}
+nav li .aa5:hover{background-color: #FFA300;}
+nav li .aa6:hover{background-color: #16A5C1;}
+nav li a:hover{
+    padding: 0 50px;
+}
+.h{ height: 1800px;}
+</style>
+</head>
+<body>
+    <nav class="clearfix">
+        <ul>
+            <li><a href="#" class="aa1">洛杉矶简介</a></li>
+            <li><a href="#" class="aa2">可去之处</a></li>
+            <li><a href="#" class="aa3">可做之事</a></li>
+            <li><a href="#" class="aa4">购物天堂</a></li>
+            <li><a href="#" class="aa5">游客体验</a></li>
+            <li><a href="#" class="aa6">马上出发吧</a></li>
+        </ul>
+    </nav>
+    <div class="h">
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>
+        1 <br>
+        2 <br> 
+        3 <br>
+        4 <br> 
+        5 <br> 
+        6 <br> 
+        7 <br> 
+        8 <br>      
+    </div>
+<script src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    var $window = $(window);
+    var $nav = $('nav');
+    var topOld = $(window).scrollTop();
+    var topNew = 0;
+    var navH = $nav.innerHeight();
+    var navTop = $nav.offset().top;
+    // fixed 且会随滚动收展
+   $(window).scroll(function () {
+        topNew = $(window).scrollTop();        
+        // 向下滚动
+        if(topNew > topOld) {
+            if(topNew > navTop + navH) {
+                $nav.stop().animate({top: -navH}, 200);
+            } else if (topNew > navTop && topNew < navTop + navH) {
+                $nav.stop().css({top: 0});
+            }
+        }
+        // 向上滚动
+        else {
+            if (topNew > navTop) {
+                $nav.stop().animate({top: 0}, 200);
+            } else if(topOld > navTop) {
+                $nav.finish().css({top: navTop});
+            }
+        }
+        topOld = topNew;
+    });
+});
+</script>
+</body>
+</html>

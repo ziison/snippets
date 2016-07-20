@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+        <style type="text/css">
+.snow_box{overflow:hidden;position:absolute; left:0px; top:80px; z-index:1000; width:100%;height:460px;}
+.snow{ position:absolute;width:20px; height:10px; background-color:#db6599;}
+.snow_o{ background-color:#22abdd}
+.snow_t{ background-color:#e99312;}
+.snow_s{ background-color:#0dac67;}
+.snow_f{ background-color:#84c091;}
+</style>
+    </head>
+    <body>
+    <div class="snow_box"></div>
+    <script>
+    $(document).ready(function() {
+        var coin_id= 0; 
+    function coin(){
+        this_node = "m_" + coin_id;
+        var m_color=Math.random();//随机数  后面需要随机数来生成随机的形状
+        var coin_num=$(".snow").length;
+        if(coin_num>=50){//总数大于50之后开始移除
+            $(".snow:lt(10)").remove();
+        }
+        if(m_color<0.2){//形状
+            var no_span="<ul class='snow' id='"+this_node+"'></ul>";
+        }else if(m_color<0.4&&m_color>=0.2){
+            var no_span="<ul class='snow snow_o' id='"+this_node+"'></ul>";
+        }else if(m_color<0.6&&m_color>=0.4){
+            var no_span="<ul class='snow snow_t' id='"+this_node+"'></ul>";
+        }else if(m_color<0.8&&m_color>=0.6){
+            var no_span="<ul class='snow snow_s' id='"+this_node+"'></ul>";
+        }else if(m_color>=0.8){
+            var no_span="<ul class='snow snow_f' id='"+this_node+"'></ul>";
+        }
+        
+        $(".snow_box").append(no_span);
+        $("#"+this_node).css({"top":"-30px","left":Math.random()*100+"%","-webkit-transform":"rotate(" + Math.floor(360 * Math.random()) + "deg) scale(" + (Math.random() * 0.5 + 0.8) + ")","-webkit-transition":"top 6s ease-out,left 6s ease-out","transform":"rotate(" + Math.floor(360 * Math.random()) + "deg) scale(" + (Math.random() * 0.5 + 0.8) + ")","transition":"top 6s ease-out,left 6s ease-out"});
+        setTimeout("$('#'+this_node).css({'left':Math.random()*100+'%','top':'600px'})",100);   
+        coin_id += 1;       
+    }
+    coin_time = setInterval(coin,200);//事件执行
+    });
+        
+    </script>
+    </body>
+</html>

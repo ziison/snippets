@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    .box{float: left; width: 104px; height: 533px; position: relative; overflow: hidden;}
+    .hd{ width: 104px; height: 533px; position: absolute; left: 0; cursor: pointer; font-size: 55px; color: #fff; background-color: #67BFA7; text-align: center;}
+    .bd{ width: 348px; height: 533px; background-color: #496783; font-size: 60px; color: #fff; text-align: center;}
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box box1">
+            <div class="hd hd1">01</div>
+            <div class="bd bd1">01</div>
+        </div>
+        <div class="box box2">
+            <div class="hd hd2">02</div>
+            <div class="bd bd2">02</div>
+        </div>
+        <div class="box box3">
+            <div class="hd hd3">03</div>
+            <div class="bd bd3">03</div>
+        </div>
+        <div class="box box4">
+            <div class="hd hd4">04</div>
+            <div class="bd bd4">04</div>
+        </div>
+        <div class="box box5">
+            <div class="hd hd5">05</div>
+            <div class="bd bd5">05</div>
+        </div>
+    </div>
+<script src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(function(){
+    accordion('.wrap');
+});
+function accordion(target){
+    var box=$(target).find('.box');
+    box.eq(0).css({'width':348}).find('.hd').css({'left':-104});
+    box.mouseover(function(){
+        $(this).stop().animate({'width':348}).find('.hd').stop(true,true).animate({'left':-104});
+        $(this).siblings().stop().animate({'width':104}).find('.hd').stop(true,true).animate({'left':0});
+    });
+}
+</script>
+</body>
+</html>

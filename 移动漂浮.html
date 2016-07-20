@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>index</title>
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+  <style>
+	body{background:#eaeaea;}
+	.five {position: relative;width: 1000px;height: 797px;margin: 0 auto;}
+	#fi1{position: absolute; width: 150px;height: 150px; background:#E03D4D;}
+	#fi4{position: absolute; width: 239px;height: 198px; background:#136FB8;}
+	#fi7{position: absolute; width: 352px;height: 395px; background:#1D985F;}
+  </style>
+ </head>
+
+ <body>
+ <div class="five">
+	<div id="fi1" class="fixPng"></div>
+	<div id="fi4" class="fixPng"></div>
+	<div id="fi7" class="fixPng"></div>
+ </div>
+ <script>
+	$(document).ready(function(){
+		//顶楼鼠标事件
+		var centerX = parseInt($(document).width()/2);
+		var	centerY = 750;
+		$('.five').mousemove(function(e){
+			difX = centerX-e.pageX;
+			difY = centerY-e.pageY;
+			var moveX = centerX-e.pageX, moveY = centerY-e.pageY;
+			$('#fi1').css({top:41+moveY/30,left:138+moveX/125});
+			$('#fi4').css({top:223+moveY/40,left:838-moveX/55});
+			$('#fi7').css({top:283-moveY/45,left:367+moveX/230});
+		});
+	});
+ </script>
+ </body>
+</html>

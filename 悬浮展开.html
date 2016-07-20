@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{margin: 0; padding: 0;}
+    .box{ position: relative;}
+    .box li{ position: absolute; left: 0; top: 0; list-style: none; width: 240px; height: 135px; z-index: 1;}
+    .box .a1{ background-color: #E03D4D;}
+    .box .a2{ background-color: #136FB8;}
+    .box .a3{ background-color: #1D985F;}
+</style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="a1"></li>
+            <li class="a2"></li>
+            <li class="a3"></li>
+        </ul>
+    </div>
+<script src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+     //悬浮在上面展开
+        var timer,j = 0,box = $('.box');
+        box.hover(function(){
+            clearInterval(timer);
+            $(this).find('li').each(function(index){
+                $(this).stop().animate({'left':244*index+'px'});
+            })
+        },function(){
+            timer = setInterval(function(){
+                box.find('li').css("zIndex", 1);
+                box.find('li').eq(j).css("zIndex", 2).stop(true,true).animate({'opacity':'1'},400);                
+                j< box.find('li').length-1?j++:j = 0;
+            },3000);
+            $(this).find('li').stop().animate({left:'0px'},400)
+        })
+</script>
+</body>
+</html>

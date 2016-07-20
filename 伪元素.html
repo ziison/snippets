@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>伪元素应用</title>
+<style>
+    *{ margin: 0; padding: 0;}
+    body{ background-color: #ccd3d7;}
+    .box1 img{ width: 280px;}
+    .box1{ 
+        width: 280px; 
+        height: 280px; 
+        border: 8px solid #fff; 
+        position: relative; 
+        box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+        margin: 100px auto;
+        background-color: #254D87;
+    }
+    .box1:before {
+        content: "";
+        height: 280px; 
+        width: 280px;   
+        background: #A0BBE9;
+        border: 8px solid #fff;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        z-index: -1;
+        transform: rotate(-3deg);
+        position: absolute;
+        top: 0;
+        left: -10px;
+    }
+    .box1:after {
+        content: "";
+        height: 280px; 
+        width: 280px;   
+        background: #D93A2B;
+        border: 8px solid #fff;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        z-index: -2;
+        transform: rotate(8deg);
+        position: absolute;
+        top: -5px;
+        right: -10px;
+    }
+    .box2 h3{
+        text-align:center;
+        position:relative;
+        top:80px;
+    }
+    .box2 {
+        width:70%;
+        height:200px;
+        background:#FFF;
+        margin:40px auto;
+    }
+
+    /*==================================================
+     * Effect 2
+     * ===============================================*/
+    .effect2{
+        position: relative;
+    }
+    .effect2:before, .effect2:after{
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width:300px;
+        background: #777;
+        box-shadow: 0 15px 10px #777;
+        transform: rotate(-3deg);
+    }
+    .effect2:after{
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+    .box3 h3{
+        text-align:center;
+        position:relative;
+        top:80px;
+    }
+    .box3 {
+        width:70%;
+        height:200px;
+        background:#FFF;
+        margin:40px auto;
+    }
+
+    /*==================================================
+     * Effect 8
+     * ===============================================*/
+    .effect3
+    {
+        position:relative;       
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    .effect3:before, .effect3:after{
+        content:"";
+        position:absolute; 
+        z-index:-1;
+        box-shadow:0 0 20px rgba(0,0,0,0.8);
+        top:10px;
+        bottom:10px;
+        left:0;
+        right:0;
+        border-radius:100px / 10px;
+    } 
+    .effect3:after
+    {
+        right:10px; 
+        left:auto;
+        transform:skew(8deg) rotate(3deg);
+    }
+</style>
+</head>
+<body>
+    <div class="box1">
+    </div>
+    <div class="box2 effect2">
+        <h3>Effect 2</h3>
+    </div>
+    <div class="box3 effect3">
+        <h3>Effect 3</h3>
+    </div>
+</body>
+</html>
